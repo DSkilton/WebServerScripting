@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>User Agent and Screen Resolution</title>
+        <title>C.R.U.D</title>
         <meta charset="windows-1252">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
@@ -16,31 +16,26 @@
     </head>
     <body>
         <div class ="container">
-            <h2>P2</h2>
-            <h3>Check your user and screen resolution</h3>
-            <p><a href="screen.html">Click for details</a></p>
-            
-            <h2>P3 & M2</h2>
-            <h3>Upload a File</h3>
-            <p><a href="upload.php">Click for details</a></p>
-            
-            <h2>P4</h2>
-            <h3>Simple Login</h3>
-            <p><a href="login.html">Click for details</a></p>
-            
             <div class="row">
                 <div class="col-md">
-                    <h2>M2</h2>
-                    <h3>Save Details to .txt File</h3>
+                    <h2>CRUD</h2>
+                    <h3>Create User</h3>
                     <p><a href="contact.php">Click for details</a></p>
-                </div>
-                
-                <div class="col-md">
-                    <h2>M2</h2>
-                    <h3>Edit .txt File</h3>
+                    
+                    <h3>Read  User</h3>
+                    <p><a href="editContact.php">Click for details</a></p>
+                    <h3>Update User</h3>
+                    <p><a href="editContact.php">Click for details</a></p>
+                    <h3>Delete User</h3>
                     <p><a href="editContact.php">Click for details</a></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md">
+                    <h2>Part II</h2>
+                    <h3>Database and User Interactions</h3>
+                    <p><a href="contact.php">Click for details</a></p>
+                </div>
         </div>
     </body>
 </html>

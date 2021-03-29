@@ -41,6 +41,12 @@
                     <p><a href="editContact.php">Click for details</a></p>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md">
+                    <h2>Part II</h2>
+                    <h3>Database and User Interactions</h3>
+                    <p><a href="CRUD.php">Click for details</a></p>
+                </div>
         </div>
     </body>
 </html>

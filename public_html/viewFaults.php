@@ -3,12 +3,14 @@
     $conn = openConn();
     
     if (!$conn){
-	die("Connection failed: " . mysqli_connect_error());
+        die("Connection failed: " . mysqli_connect_error());
     }
 
     // This gets the ID of the first fault in the database so we know where to start from.
     $sql = "SELECT * FROM `faults`";
     $result = mysqli_query($conn, $sql);
+    
+    echo $result . "result";
     
     if (!$conn){
         //echoing and exiting if there is an error
@@ -20,24 +22,22 @@
     $row = mysqli_query ($conn, $sql);
     
     // Checks if sql has returned an empty array implying that there are no faults in the faults table.
-    if (empty($row['faultId'])) {
-	echo "<h1>View faults</h1>";
-	echo "<b>Looks like there are no faults.</b><br />";	
-        	$faultFirstID = $row['faultId'];
-     }else{		//There's no point in doing any of the table if the above if is true.
-		// This is the first ID in the database.
-		$faultFirstID = $row['faultId'];
-                
-                  // This gets the ID of the last fault in the database so we know where to end.
-                $sql = 'SELECT faultId FROM faults ORDER BY faultId ASC LIMIT 1';
-                
-	$result = mysqli_query($conn, $sql);
-	if (!$sql){
-                        //echoing and exiting if there is an error
-                        $error = 'Error fetching stats: ' . mysqli_error($conn);
-                        echo $error;
-                        exit();
-	}
+    if (empty($row['*'])) {
+        echo "<h1>View faults</h1>";
+        echo "<b>Looks like there are no faults.</b><br />";
+     }else{		
+         $faultFirstID = $row['faultId'];
+
+          // This gets the ID of the last fault in the database so we know where to end.
+         $sql = 'SELECT faultId FROM faults ORDER BY faultId ASC LIMIT 1';
+
+         $result = mysqli_query($conn, $sql);
+         if (!$sql){
+                //echoing and exiting if there is an error
+                $error = 'Error fetching stats: ' . mysqli_error($conn);
+                echo $error;
+                exit();
+    }
         
 	$row = mysqli_query ($conn, $result);
 

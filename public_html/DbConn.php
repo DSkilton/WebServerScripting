@@ -5,8 +5,9 @@
         $dbUser = "root";
         $dbPass = "";
         $dbName = "u27";
-
-        $conn = new mysqli($dbHost, $dbUser, $dbPass) or die ("Connect failed %s\n". $conn -> error);
+        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+        
+        $conn = new mysqli($dbHost, $dbUser, $dbPass, $dbName) or die ("Connect failed %s\n". $conn -> error);
 
         return $conn;
     }
@@ -15,4 +16,4 @@
         $conn -> close();
     }
     
-    ?>
+?>
