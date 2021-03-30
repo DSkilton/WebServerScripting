@@ -19,15 +19,14 @@
             <div class="row">
                 <div class="col-md">
                     <h2>CRUD</h2>
-                    <h3>Create User</h3>
-                    <p><a href="contact.php">Click for details</a></p>
-                    
-                    <h3>Read  User</h3>
-                    <p><a href="editContact.php">Click for details</a></p>
-                    <h3>Update User</h3>
-                    <p><a href="editContact.php">Click for details</a></p>
-                    <h3>Delete User</h3>
-                    <p><a href="editContact.php">Click for details</a></p>
+                    <h3>Report Fault</h3>
+                    <p><a href="report.html">Click for details</a></p>
+                    <h3>View all Faults</h3>
+                    <p><a href="index.php">Click for details</a></p>
+                    <h3>Update Fault</h3>
+                    <p><a href="index.php">Click for details</a></p>
+                    <h3>Delete Fault</h3>
+                    <p><a href="index.php">Click for details</a></p>
                 </div>
             </div>
             <div class="row">
