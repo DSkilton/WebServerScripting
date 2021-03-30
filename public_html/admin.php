@@ -2,51 +2,54 @@
     include 'DbConn.php';
     $conn = openConn();
     
-    if (isset($_POST['user_edited'])){
-            if (isset($_POST['faultTitle']) && isset($_POST['faultLocation']) && isset($_POST['faultDescription']) && isset($_POST['faultTechnician']) && isset($_POST['faultStatus'])){
-            
-                // Check database connection
-                if (!$conn){
-                        die("Connection failed: " . mysqli_connect_error());
-                }
-
-                session_start();
-                $faultTitle = ($_POST['faultTitle']);
-                
-                $faultLocation = ($_POST['faultLocation']);
-                $faultDescription = ($_POST['faultDescription']);
-                $faultTechnician = ($_POST['faultTechnician']);
-                $faultStatus = ($_POST['faultStatus']);
-                $faultIp = ($_SERVER['REMOTE_ADDR']);
-                $date = date('m.d.y');
-
-                //$sql statement
-                $sqlStatement = "INSERT INTO faults (faultTitle, faultLocation, faultDescription, faultTechnician, faultStatus, faultIp, faultDate)  "
-                                        .  "VALUES ('$faultTitle', '$faultLocation', '$faultDescription', '$faultTechnician', '$faultStatus', '$faultIp', '$date)"; //, '$ip', '$faultDate',  '$ip', '$faultDate'
-
-                $result = mysqli_query($conn, $sqlStatement);
-
-                if(!mysqli_query($conn, $sqlStatement)){
-                        //echoing and exiting if there is an error
-                        $error = 'Error fetching user: ' . mysqli_error($result);
-                        echo $error;
-                        exit();
-                 }
-
-                //once completed, returns user to index
-                header('location: index.php'); 
-            }else{
-                    echo "You have not completed one of the mandatory fields.";
-                }
-    }else{
-        // Check database connection
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-        
-        if ($conn){	
-            include 'report.html';
-            exit();
-        }
-    }
+   
 ?>
+<html>
+  <head>
+        <title>Admin Page</title>
+        <meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+        
+        <!--Boostrap JavaScript-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+        
+    </head>
+    <body>
+        <div class ="container">
+            <div class = "row">
+                <h2>Admin Lounge</h2>
+            </div>
+            <div class = "row">
+                <h3>Leet's Only. Select an option below</h3>
+            </div>
+        </div>
+        
+        <div class =" container">
+            <div class ="row align-items-center h-25">
+                <div class="col-sm-4 mx-auto  ">
+                    <button type="button" class="btn btn-primary btn-lg">Add User</button>
+                </div>
+                <div class="col-sm-4 mx-auto  ">
+                    <button type="button" class="btn btn-primary btn-lg">Delete User</button>
+                </div>
+            </div>
+             <div class ="row align-items-center h-25">
+                <div class="col-sm-3 mx-auto  ">
+                    <button type="button" class="btn btn-primary btn-lg">View Faults</button>
+                </div>
+                <div class="col-sm-3 mx-auto  ">
+                    <button type="button" class="btn btn-primary btn-lg">Update Faults</button>
+                </div>
+                 <div class="col-sm-3 mx-auto  ">
+                    <button type="button" class="btn btn-primary btn-lg">Delete Faults</button>
+                </div>
+                 <div class="col-sm-3 mx-auto  ">
+                    <button type="button" class="btn btn-primary btn-lg">Add Faults</button>
+                </div>
+            </div>
+        </div>
