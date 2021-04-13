@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: student
- * Date: November 2016
- */
-
 
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {

@@ -22,11 +22,11 @@
                     <h3>Report Fault</h3>
                     <p><a href="report.html">Click for details</a></p>
                     <h3>View all Faults</h3>
-                    <p><a href="index.php">Click for details</a></p>
+                    <p><a href="viewFaults.php">Click for details</a></p>
                     <h3>Update Fault</h3>
-                    <p><a href="index.php">Click for details</a></p>
+                    <p><a href="#">Click for details</a></p>
                     <h3>Delete Fault</h3>
-                    <p><a href="index.php">Click for details</a></p>
+                    <p><a href="#">Click for details</a></p>
                 </div>
             </div>
             <div class="row">
