@@ -21,8 +21,8 @@
                 $date = date('m.d.y');
 
                 //$sql statement
-                $sqlStatement = "INSERT INTO faults (faultTitle, faultLocation, faultDescription, faultTechnician, faultStatus, faultIp, faultDate)  "
-                                        .  "VALUES ('$faultTitle', '$faultLocation', '$faultDescription', '$faultTechnician', '$faultStatus', '$faultIp', '$date)"; //, '$ip', '$faultDate',  '$ip', '$faultDate'
+                $sqlStatement = "INSERT INTO faults (faultTitle, faultLocation, faultDescription, faultTechnician, faultStatus, faultIp, faultDate)"
+                                        .  "VALUES ('$faultTitle', '$faultLocation', '$faultDescription', '$faultTechnician', '$faultStatus', '$faultIp', '$date')"; //, '$ip', '$faultDate',  '$ip', '$faultDate'
 
                 $result = mysqli_query($conn, $sqlStatement);
 

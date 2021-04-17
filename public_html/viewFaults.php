@@ -1,6 +1,17 @@
 <html>
+    <head>
     <title>
-
+<meta charset="windows-1252">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!--Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" crossorigin="anonymous">
+        
+        <!--Boostrap JavaScript-->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    </head>
     </title>
     <?php
     include 'DbConn.php';
@@ -15,6 +26,7 @@
     $result = mysqli_query($conn, $sql);
     ?>
     <body>
+        
         <table style="border:1px;">
             <tr>
                 <th>ID </th>
@@ -48,7 +60,7 @@
         </head>
         <body>
 
-            <br /><a href="home.php">Back</a><br />
+            <br /><a href="crud.php">Back</a><br />
 
 
         </body>
