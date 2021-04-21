@@ -40,16 +40,17 @@
             </div>
              <div class ="row align-items-center h-25">
                 <div class="col-sm-3 mx-auto  ">
-                    <button type="button" class="btn btn-primary btn-lg">View Faults</button>
+                    <a href="viewFaults.php"><button type="button" class="btn btn-primary btn-lg">View Faults</button></a>
                 </div>
                 <div class="col-sm-3 mx-auto  ">
-                    <button type="button" class="btn btn-primary btn-lg">Update Faults</button>
+                    <a href="updateFaults.php"><button type="button" class="btn btn-primary btn-lg">Update Faults</button></a>
                 </div>
                  <div class="col-sm-3 mx-auto  ">
-                    <button type="button" class="btn btn-primary btn-lg">Delete Faults</button>
+                     <a href="deleteFault.php"><button type="button" class="btn btn-primary btn-lg">Delete Faults</button></a>
                 </div>
                  <div class="col-sm-3 mx-auto  ">
-                    <button type="button" class="btn btn-primary btn-lg">Add Faults</button>
+                     <a href="report.html"><button type="reportFault.html" class="btn btn-primary btn-lg">Add Faults</button></a>
+
                 </div>
             </div>
         </div>

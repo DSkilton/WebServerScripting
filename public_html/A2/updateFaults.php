@@ -19,7 +19,7 @@
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
-
+    session_start();
 // This gets the ID of the first fault in the database so we know where to start from.
     $sql = "SELECT * FROM `faults`";
     $result = mysqli_query($conn, $sql);
@@ -55,48 +55,65 @@
         <div class="container" style="padding-top: 30px">
             <h2>Edit Details</h2>
 
-            <form>
+            <?PHP
+                if ($_SERVER['REQUEST_METHOD'] == "POST")   {
+
+                    $buttonSearch = ($_POST['inputFaultId']);
+                    $faultTitle = ($_POST['inputFaultTitle']);
+                    $faultLocation = ($_POST['inputFaultLocation']);
+                    $faultDescription = ($_POST['inputFaultDescription']);
+                    $faultTechnician = ($_POST['inputFaultTechnician']);
+                    $faultStatus = ($_POST['inputFaultStatus']);
+
+                    $sql = "UPDATE `faults` SET faultTitle = '$faultTitle', faultLocation = '$faultLocation', faultDescription = '$faultDescription', faultTechnician = '$faultTechnician', faultStatus = '$faultStatus' WHERE `faultId` = $buttonSearch";
+                    $result = mysqli_query($conn, $sql);
+                }
+                
+            
+            ?>
+
+            <form method="post" action = "updateFaults.php">
                 <div class="form-row">
                     <div class="form-group col-md-2">
                         <label for="inputFaultId">ID Number</label>
-                        <input type="text" class="form-control" id="inputFaultId" placeholder="ID">
+                        <input type="text" class="form-control" name="inputFaultId" placeholder="ID">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputFaultTitle">Fault Title</label>
-                        <input type="text" class="form-control" id="inputFaultTitle" placeholder="Title">
+                        <input type="text" class="form-control" name="inputFaultTitle" placeholder="Title" value="">
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputFaultLocation">Fault Location</label>
-                        <input type="text" class="form-control" id="inputFaultLocation" placeholder="Location">
+                        <input type="text" class="form-control" name="inputFaultLocation" placeholder="Location" value="">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="inputFaultDescription">Fault Description</label>
-                    <input type="text" class="form-control" id="inputFaultDescription" placeholder="Description">
+                    <input type="text" class="form-control" name="inputFaultDescription" placeholder="Description" value="">
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-3">
-                        <label for="inputFaultStatus">Technician</label>
-                        <input type="text" class="form-control" id="inputFaultStatus">
+                        <label for="inputFaultTechnician">Technician</label>
+                        <input type="text" class="form-control" name="inputFaultTechnician" value="">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputFaultStatus">Status</label>
-                        <input type="text" class="form-control" id="inputFaultStatus">
+                        <input type="text" class="form-control" name="inputFaultStatus" value="">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputFaultIp">IP Address</label>
-                        <input type="text" class="form-control" id="inputFaultIp">
+                        <input type="text" class="form-control" name="inputFaultIp"value="">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="inputFaultDate">Date Reported</label>
-                        <input type="text" class="form-control" id="inputFaultDate">
+                        <input type="text" class="form-control" name="inputFaultDate" value="">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Search</button>
-                <button type="submit" class="btn btn-primary">Save</button>
+
+                <button type="buttonSave" class="btn btn-primary">Save</button>
             </form>
 
-            <br /><a href="crud.php">Back</a><br />
+            <br /><a href="admin.php">Back</a><br />
 
         </div>
     </body>

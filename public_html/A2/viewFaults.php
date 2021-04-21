@@ -60,7 +60,7 @@
         </head>
         <body>
 
-            <br /><a href="crud.php">Back</a><br />
+            <br /><a href="admin.php">Back</a><br />
 
 
         </body>

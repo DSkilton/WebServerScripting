@@ -47,7 +47,7 @@ function clean_Data($data)
 ?>
 <html>
 <head>
-    <title>Phil's Login page</title>
+    <title>Login page</title>
     <!--<link rel="stylesheet" type="text/css" src="css/modern-business.css"> -->
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <script>
@@ -73,7 +73,7 @@ function clean_Data($data)
     </script>
 </head>
 <body>
-<h1>Welcome to MWS</h1>
+<h1>Welcome to Here</h1>
 <h2>please enter your credentials to login.</h2>
 <form method="post" action ="login.php" onsubmit="return validate()">
     <label class="error" id="errlabel" style="visibility:hidden">You need to enter at least 6 characters</label>
@@ -85,8 +85,7 @@ function clean_Data($data)
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" maxlength="25" size="20">
     <span class="error"> *<?php  echo $pwerr; ?></span>
-    </br>
-    <input type="submit" value="Submit">
+    </br>    <input type="submit" value="Submit">
 </form>
 </br>
 <a href="#">Cannot remember your password.</a>

@@ -60,15 +60,15 @@
         </br></br>
         <label for="username">Email:</label>
         <input type="text" id="username" name="username" maxlength="25" size="20" required>
-        <span class="error"> *<?php  echo $nameerr; ?></span>
+        
         </br>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" maxlength="25" size="20">
-        <span class="error"> *<?php  echo $pwerr; ?></span>
+        
         </br>
         <input type="submit" value="Submit">
     </form>
     </br>
-    <a href="#">Cannot remember your password.</a>
+    <a href="../index.php">back</a>
     </body>
 </html>

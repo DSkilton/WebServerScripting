@@ -22,7 +22,7 @@
 
                 //$sql statement
                 $sqlStatement = "INSERT INTO faults (faultTitle, faultLocation, faultDescription, faultTechnician, faultStatus, faultIp, faultDate)"
-                                        .  "VALUES ('$faultTitle', '$faultLocation', '$faultDescription', '$faultTechnician', '$faultStatus', '$faultIp', '$date')"; //, '$ip', '$faultDate',  '$ip', '$faultDate'
+                                .  "VALUES ('$faultTitle', '$faultLocation', '$faultDescription', '$faultTechnician', '$faultStatus', '$faultIp', '$date')"; //, '$ip', '$faultDate',  '$ip', '$faultDate'
 
                 $result = mysqli_query($conn, $sqlStatement);
 
@@ -34,7 +34,7 @@
                  }
 
                 //once completed, returns user to index
-                header('location: index.php'); 
+                header('location: admin.php'); 
             }else{
                     echo "You have not completed one of the mandatory fields.";
                 }
